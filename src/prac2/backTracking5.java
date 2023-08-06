@@ -43,7 +43,6 @@ public class backTracking5 {
 			
 			if(isPromising(col)) {
 				
-				
 				nQueen(n,col+1);
 			}
 		}
