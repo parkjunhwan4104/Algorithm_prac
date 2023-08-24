@@ -62,7 +62,7 @@ public class DP7 {
 		}
 		
 		return dpArr[floor][index];
-		
+	
 	}
 
 }
