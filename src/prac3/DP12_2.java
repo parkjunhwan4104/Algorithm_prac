@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class DP12 {
+public class DP12_2 {
 
 	static int[] sequence;
 	static int[] dpArr;
@@ -26,12 +26,12 @@ public class DP12 {
 		for(int i=1;i<=n;i++) {
 			int k=Integer.parseInt(st.nextToken());
 			sequence[i]=k;
-			
-			dpArr[i]=1;
 		}
 
-	
-		getLIS(n);
+		for(int i=1;i<=n;i++) {
+			getLIS(i);
+		}
+		
 				
 		bw.write(""+getMax(dpArr));
 		
@@ -39,36 +39,19 @@ public class DP12 {
 		bw.close();
 	}
 
-	public static void getLIS(int n) {
+	public static int getLIS(int n) {
 
-		
-		/*
-		
-		for(int i=2;i<=n;i++) {
-			for(int j=1;j<i;j++) {
-				if(sequence[i]>sequence[j]&&dpArr[i]<=dpArr[j]+1) {
-					dpArr[i]=dpArr[j]+1;					
-				}
-			}
-		}
-		*/
-
-		
-		
-		for(int i=2;i<=n;i++) {
-			
-			for(int j=1;j<i;j++) {
-				
-				if((sequence[i]>sequence[j])&&dpArr[i]<=dpArr[j]+1) {
-					System.out.println("i:"+dpArr[i]+", j:"+dpArr[j]);
-					
-					dpArr[i]=dpArr[j]+1;
-				}
-			}
+		if(dpArr[n]==0) {
+			dpArr[n]=1;
 		}
 		
-		
-
+		for(int i=n-1;i>0;i--) {
+			if(sequence[i]<sequence[n]) {
+				dpArr[n]=Math.max(dpArr[n],getLIS(i)+1 );
+			}
+		}
+	
+		return dpArr[n];
 	}
 	
 	public static int getMax(int[] arr) {

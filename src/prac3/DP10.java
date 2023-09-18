@@ -63,6 +63,7 @@ public class DP10 {
 					dpArr[i][j]=(dpArr[i-1][j+1]+dpArr[i-1][j-1])%mod;
 				}
 			}
+			
 		}		
 		
 	}

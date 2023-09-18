@@ -58,11 +58,11 @@ public class DP7 {
 		if(dpArr[floor][index]==0) {
 			
 			
-			dpArr[floor][index]=Math.max(getSum(n,floor+1,index),getSum(n,floor+1,index+1))+triangle[floor][index];
+			dpArr[floor][index]=Math.max(getSum(n,floor+1,index),getSum(n,floor+1,index+1))+triangle[floor][index];		
 		}
 		
 		return dpArr[floor][index];
-	
+			
 	}
 
 }

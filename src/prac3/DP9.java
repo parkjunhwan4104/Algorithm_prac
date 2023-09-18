@@ -34,9 +34,7 @@ public class DP9 {
 		
 		else {
 		
-			return Math.min(operation(n/2,count+1+(n%2)), operation(n/3,count+1+(n%3)));
-			
-
+			return Math.min(operation(n/2,count+1+(n%2)), operation(n/3,count+1+(n%3)));			
 		}
 		
 		
