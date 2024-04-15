@@ -13,7 +13,7 @@ public class algo1_9 {  //처음에 못 풀었음
 	static char[][] board;
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
-	
+		
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(System.out));
 		
@@ -55,6 +55,7 @@ public class algo1_9 {  //처음에 못 풀었음
 		}
 		
 		bw.write(min+"");
+		
 		bw.flush();
 		bw.close();
 	}
